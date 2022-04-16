@@ -1,0 +1,29 @@
+{% extends "layouts/layout.njk" %}
+{% block title %}
+    Register
+{% endblock %}
+{% block content %}
+    <section class='register'>
+        <section class='information'>
+            <h1>Register</h1>
+            <form action='/register' method='post'>
+                <section class='general-information' id='general-information'>
+                    <div class='wrapper'>
+                        <label for='username'>Username <span class='char-count'></span></label>
+                        <input id='username' type='text' name='username' required maxlength='20' placeholder='Your username...'/>
+                    </div>
+                    <div class='wrapper'>
+                        <label for='email'>Email</label>
+                        <input id='email' type='email' name='email' required maxlength='35' placeholder='Your email...'/>
+                    </div>
+                    <div class='wrapper'>
+                        <label for='password'>Password</label>
+                        <input id='password' type='password' name='password' required maxlength='25' placeholder='Your password...'/>
+                    </div>
+                    <a href='/login'>Already have an account?</a>
+                    <button type='submit'>Register</button>
+                </section>
+            </section>
+        </form>
+    </section>
+{% endblock %}
