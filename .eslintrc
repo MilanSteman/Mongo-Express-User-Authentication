@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "wesbos"
+    ],
+    "rules": {
+        "no-console": "off",
+        "new-cap": 0,
+        "eqeqeq": "off",
+        "default-case": "off",
+        "no-unused-vars": "off",
+        "no-plusplus": [
+            0,
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "endOfLine": "auto",
+                "singleQuote": true,
+                "printWidth": 120,
+                "tabWidth": 4
+            }
+        ]
+    }
+}

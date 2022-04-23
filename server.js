@@ -11,8 +11,11 @@ const THOUSAND_HOURS = 3600000;
 /**
  * Routes
  */
- const authRoutes = require('./src/routes/authRoutes.js');
+const authRoutes = require('./src/routes/AuthRoutes');
 
+/**
+ * Database helpers
+ */
 const connectToDB = require('./src/config/mongoose.js');
 const checkUser = require('./src/config/passport.js');
 
@@ -26,8 +29,6 @@ nunjucks.configure('src/views/', {
 app.use(express.static('static/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-connectToDB();
 
 app.use(
     session({
@@ -46,10 +47,9 @@ app.use(passport.session());
 
 app.use('/', authRoutes);
 
-
+connectToDB();
 checkUser();
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
-
